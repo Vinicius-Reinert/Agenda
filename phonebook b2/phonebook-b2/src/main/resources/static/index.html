@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="forms.js"></script>
+</head>
+<body>
+<h1>PhoneBook Demo</h1>
+
+<div id="person_tab">
+    <h2>Person</h2>
+    <form id="person_insert">
+        <label>Person Insert</label>
+        <br/>
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="anniversaryDate" placeholder="anniversaryDate">
+        <input id="person_telephones_input" type="text" name="telephones" placeholder="telephones" readonly>
+        <input id="person_address_field_input" type="text" name="address" placeholder="address" readonly>
+        <input type="submit" value="Insert">
+    </form>
+
+
+    <form id="person_update">
+        <label>Person Update</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="anniversaryDate" placeholder="anniversaryDate">
+        <input id="person_telephones_update" type="text" name="telephones" placeholder="telephones" readonly>
+        <input id="person_address_field_update" type="text" name="address" placeholder="address" readonly>
+        <input type="submit" value="Update">
+    </form>
+
+    <form id="person_telephone">
+        <label>Telephone1</label>
+        <br/>
+        <input type="text" name="number" placeholder="number">
+        <input type="text" name="carrier_id" placeholder="carrier_id">
+        <input type="text" name="type_id" placeholder="type_id">
+    </form>
+
+    <form id="person_telephone2">
+        <label>Telephone2</label>
+        <br/>
+        <input type="text" name="number" placeholder="number">
+        <input type="text" name="carrier_id" placeholder="carrier_id">
+        <input type="text" name="type_id" placeholder="type_id">
+    </form>
+
+    <form id="person_telephone3">
+        <label>Telephone3</label>
+        <br/>
+        <input type="text" name="number" placeholder="number">
+        <input type="text" name="carrier_id" placeholder="carrier_id">
+        <input type="text" name="type_id" placeholder="type_id">
+    </form>
+
+    <form id="person_address">
+        <label>Address</label>
+        <br/>
+        <input type="text" name="state" placeholder="state">
+        <input type="text" name="town" placeholder="town">
+        <input type="text" name="neighborhood" placeholder="neighborhood">
+        <input type="text" name="street" placeholder="street">
+        <input type="text" name="number" placeholder="number">
+        <!--<input type="text" name="person" placeholder="person">-->
+    </form>
+
+    <form id="person_get">
+        <label>Person Get</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Get">
+    </form>
+    <label>Get Results</label>
+    <p id="person_get_results"></p>
+
+    <form id="person_get_all">
+        <label>Person Get All</label>
+        <br/>
+        <input type="submit" value="Get All">
+    </form>
+    <label>Get All Results</label>
+    <p id="person_get_all_results"></p>
+
+    <form id="person_delete">
+        <label>Person Delete</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Delete">
+    </form>
+
+    <form id="person_delete_all">
+        <label>Person Delete All</label>
+        <br/>
+        <input type="submit" value="Delete All">
+    </form>
+</div>
+<hr>
+
+<div id="telephone_tab">
+    <h2>Telephone</h2>
+    <form id="telephone_insert">
+        <label>Telephone Insert</label>
+        <br/>
+        <input type="text" name="number" placeholder="number">
+        <input type="text" name="carrier_id" placeholder="carrier_id">
+        <input type="text" name="type_id" placeholder="type_id">
+        <input type="text" name="person_id" placeholder="person_id">
+        <input type="submit" value="Insert">
+    </form>
+
+    <form id="telephone_update">
+        <label>Telephone Update</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="text" name="number" placeholder="number">
+        <input type="text" name="carrier_id" placeholder="carrier_id">
+        <input type="text" name="type_id" placeholder="type_id">
+        <input type="text" name="person_id" placeholder="person_id">
+        <input type="submit" value="Update">
+    </form>
+
+    <form id="telephone_get">
+        <label>Telephone Get</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Get">
+    </form>
+    <label>Get Results</label>
+    <p id="telephone_get_results"></p>
+
+    <form id="telephone_get_all">
+        <label>Telephone Get All</label>
+        <br/>
+        <input type="submit" value="Get All">
+    </form>
+    <label>Get All Results</label>
+    <p id="telephone_get_all_results"></p>
+
+    <form id="telephone_delete">
+        <label>Telephone Delete</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Delete">
+    </form>
+
+    <form id="telephone_delete_all">
+        <label>Telephone Delete All</label>
+        <br/>
+        <input type="submit" value="Delete All">
+    </form>
+</div>
+<hr>
+
+<div id="address_tab">
+    <h2>Address</h2>
+    <form id="address_insert">
+        <label>Address Insert</label>
+        <br/>
+        <input type="text" name="state" placeholder="state">
+        <input type="text" name="town" placeholder="town">
+        <input type="text" name="neighborhood" placeholder="neighborhood">
+        <input type="text" name="street" placeholder="street">
+        <input type="text" name="number" placeholder="number">
+        <!--<input type="text" name="person" placeholder="person">-->
+        <input type="submit" value="Insert">
+    </form>
+
+    <form id="address_update">
+        <label>Address Update</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="text" name="state" placeholder="state">
+        <input type="text" name="town" placeholder="town">
+        <input type="text" name="neighborhood" placeholder="neighborhood">
+        <input type="text" name="street" placeholder="street">
+        <input type="text" name="number" placeholder="number">
+        <!--<input type="text" name="person" placeholder="person">-->
+        <input type="submit" value="Update">
+    </form>
+
+    <form id="address_get">
+        <label>Address Get</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Get">
+    </form>
+    <label>Get Results</label>
+    <p id="address_get_results"></p>
+
+    <form id="address_get_all">
+        <label>Address Get All</label>
+        <br/>
+        <input type="submit" value="Get All">
+    </form>
+    <label>Get All Results</label>
+    <p id="address_get_all_results"></p>
+
+    <form id="address_delete">
+        <label>Address Delete</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Delete">
+    </form>
+
+    <form id="address_delete_all">
+        <label>Address Delete All</label>
+        <br/>
+        <input type="submit" value="Delete All">
+    </form>
+</div>
+<hr>
+
+<div id="telephoneType_tab">
+    <h2>TelephoneType</h2>
+    <form id="telephoneType_insert">
+        <label>TelephoneType Insert</label>
+        <br/>
+        <input type="text" name="type" placeholder="type">
+        <input type="text" name="telephones" placeholder="telephones">
+        <input type="submit" value="Insert">
+    </form>
+
+
+    <form id="telephoneType_update">
+        <label>TelephoneType Update</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="text" name="type" placeholder="type">
+        <input type="text" name="telephones" placeholder="telephones">
+        <input type="submit" value="Update">
+    </form>
+
+    <form id="telephoneType_get">
+        <label>TelephoneType Get</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Get">
+    </form>
+    <label>Get Results</label>
+    <p id="telephoneType_get_results"></p>
+
+    <form id="telephoneType_get_all">
+        <label>TelephoneType Get All</label>
+        <br/>
+        <input type="submit" value="Get All">
+    </form>
+    <label>Get All Results</label>
+    <p id="telephoneType_get_all_results"></p>
+
+    <form id="telephoneType_delete">
+        <label>TelephoneType Delete</label>
+        <br/>
+        <input type="text" name="id" placeholder="id">
+        <input type="submit" value="Delete">
+    </form>
+
+    <form id="telephoneType_delete_all">
+        <label>TelephoneType Delete All</label>
+        <br/>
+        <input type="submit" value="Delete All">
+    </form>
+</div>
+<hr>
+
+<div id="carrier_tab">
+    <h2>Carrier</h2>
+<form id="carrier_insert">
+    <label>Carrier Insert</label>
+    <br/>
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="telephones" placeholder="telephones">
+    <input type="submit" value="Insert">
+</form>
+
+<form id="carrier_update">
+    <label>Carrier Update</label>
+    <br/>
+    <input type="text" name="id" placeholder="id">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="telephones" placeholder="telephones">
+    <input type="submit" value="Update">
+</form>
+
+<form id="carrier_get">
+    <label>Carrier Get</label>
+    <br/>
+    <input type="text" name="id" placeholder="id">
+    <input type="submit" value="Get">
+</form>
+<label>Get Results</label>
+<p id="carrier_get_results"></p>
+
+<form id="carrier_get_all">
+    <label>Carrier Get All</label>
+    <br/>
+    <input type="submit" value="Get All">
+</form>
+<label>Get All Results</label>
+<p id="carrier_get_all_results"></p>
+
+<form id="carrier_delete">
+    <label>Carrier Delete</label>
+    <br/>
+    <input type="text" name="id" placeholder="id">
+    <input type="submit" value="Delete">
+</form>
+
+<form id="carrier_delete_all">
+    <label>Carrier Delete All</label>
+    <br/>
+    <input type="submit" value="Delete All">
+</form>
+</div>
+<hr>
+
+
+</body>
+</html>
